@@ -1,0 +1,47 @@
+import React, { Component } from 'react'
+import './App.css'
+import Slider from "react-slick"
+import Lightbox from "react-image-lightbox"
+
+export default class Projects extends Component {
+  state = {
+    activeSlide: 0,
+    activeSlide2: 0
+  };
+  render() {
+    const settings = {
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current }),
+      infinite: true,
+      fade: true,
+      speed: 100,
+      lazyload: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      adaptiveHeight: true,
+      draggable: false
+    };
+    return (
+      <div className='project'>
+        <Slider {...settings}>
+          <div>
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAnPmCkOpy5grvKmlTrJkLqof5a9J9d-aotxINa9oBcCodhi2"/>
+          </div>
+          <div>
+            <img  src="http://localhost:8888/wp-content/uploads/2018/06/tumblr_op0x03Wt0N1qzqavpo1_1280.jpg"/>
+          </div>
+          <div>
+            <img  src="http://kasper-florio.ch/wp-content/uploads/2018/05/Kasper-Florio_IEA-FS-Final-reviews-2018.jpg"/>
+          </div>
+          <div>
+            <img  src="http://kasper-florio.ch/wp-content/uploads/2018/05/Kasper-Florio_Matthias-Gabi_01.jpg"/>
+          </div>
+          <div>
+            <img  src="http://kasper-florio.ch/wp-content/uploads/2018/05/Kasper-Florio_IEA-FS-Final-reviews-2018.jpg"/>
+          </div>
+        </Slider>
+        <div className='projectcap'><span className='number'>({this.state.activeSlide}/23)</span><a>My Linen Legacy, The Plant magazine.</a><span className='zoom'><a>+</a></span></div>
+      </div>
+    );
+  }
+}
