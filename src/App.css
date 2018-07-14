@@ -10,26 +10,38 @@
     width: 0px;
 }
 
+::-moz-selection { /* Code for Firefox */
+    color: #0FC6FF;
+    background: rgb(255, 255, 255, 0);
+}
+
+::selection {
+    color: #0FC6FF;
+    background: rgb(255, 255, 255, 0);
+}
+
 body {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                supported by Chrome and Opera */
   margin: 0;
   font-size: 12px;
-  letter-spacing: 0.6px;
+  letter-spacing: 1px;
+  line-height: 14px;
   text-transform: uppercase;
   font-family: 'lanakimregular';
-  overflow: hidden;
   background-color: #fff;
+  overflow: hidden;
 }
 
 p {
   font-family: 'lanakimregular';
   margin: 0;
+  color: #9e9e9e;
+  cursor: default;
+}
+
+a {
+  z-index: 50;
+  cursor: pointer;
+  color: #000;
 }
 
 .number {
@@ -39,16 +51,28 @@ p {
 }
 
 .zoom {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 12px;
   position: absolute;
+  width: 12px;
+  text-align: right;
+  box-shadow: 0px 0px 12px 10px #fff;
   right: 0;
+  background-color: #fff;
+}
+
+.exit {
+  font-size: 8px;
+  margin-left: 100px;
+  width: 12px;
+  /* box-shadow: 0px 0px 12px 10px #fff; */
+  background-color: #fff;
 }
 
 img {
-  max-width: calc(0.416666665 * (100vw - 20px));
   position: relative;
   width: 100%;
+  /* border-radius: 5px; */
 }
 
 ul,li {
@@ -56,11 +80,114 @@ ul,li {
     padding-left: 0;
 }
 
-.project {
-  width: calc(0.416666665 * (100vw - 20px));
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 100ms ease-in;
+}
+
+.load-appear {
+  opacity: 0;
+}
+
+.load-appear.load-appear-active {
+  opacity: 1;
+  transition: opacity 5000ms ease-in;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 500;
+  background-color: #fff;
+overflow: scroll;
+}
+
+.modalwrap {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 10px 10px 0 10px;
+  display: inline-block;
+  vertical-align: top;
+  overflow: scroll;
+}
+
+.modalslider {
+  width: calc(100% - 20px);
+  height: 100%;
+  margin: 0;
+  padding: 10px 10px 0 10px;
+  display: inline-block;
+  vertical-align: top;
+  z-index: 10;
+  overflow: scroll;
+}
+
+.modalslider img {
+  max-height: auto;
+  width: 100%;
+  display: block;
+  overflow: scroll;
+}
+
+.modalnav {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 20px;
+  z-index: 900;
+  background-color: #fff;
+  padding-top: 10px;
+}
+
+.back {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 100%;
+  height: auto;
+  z-index: 1000;
+}
+
+.topborder {
+  background-color: #fff;
+  position: fixed;
+  height: 20px;
+  width: 100vw;
+  top: 0;
+  z-index: 1000;
+}
+
+.App {
   height: 100vh;
-  margin: 20px 0 0 calc(0.08333333333 * (100vw - 20px));
-  padding: 0;
+  width: 100%;
+  margin: 0px;
+  padding: 10px;
   display: inline-block;
   vertical-align: top;
 }
@@ -69,74 +196,37 @@ ul,li {
   transition: 0.1s;
 }
 
-
-.projectcap {
-  width: calc(0.416666665 * (100vw - 20px));
-  position: fixed;
-  bottom: 20px;
-  left: calc(0.08333333333 * (100vw - 20px));
-  z-index: 999;
-}
-
-.projectcap a {
-  transition: 0.1s;
-}
-
-.projectcap:hover a{
-  filter: blur(1px);
-}
-
 .personal {
-  width: calc(0.416666665 * (100vw - 20px));
-  height: 100vh;
-  margin: 20px 0 0 20px;
-  padding: 0;
+  width: calc(100% - 20px);
+  height: calc(100vh - 40px);
+  margin: 0;
+  padding: 10px;
   display: inline-block;
   vertical-align: top;
+  z-index: 1;
 }
 
 .personalcap {
-  width: calc(0.416666665 * (100vw - 20px));
-  position: fixed;
-  bottom: 20px;
-  z-index: 999;
-}
-
-.personalcap a {
-  transition: 0.1s;
-}
-
-.personalcap:hover a {
-  filter: blur(1px);
-}
-
-/*<div className='project'>{projects}</div>
-<div className='projectcap'>{projectscap}</div>
-<div className='personal'>{personal}</div>
-<div className='personalcap'>{personalcap}</div>*/
-
-.nav {
-  position: fixed;
+  width: calc(100% - 20px);
+  position: absolute;
   bottom: 0;
-  margin: 0;
-  width: 100vw;
-  height: 46px;
+  z-index: 4;
+  padding-bottom: 10px;
+  padding-top: 5px;
   background-color: #fff;
 }
 
-.name {
-  position: absolute;
+.nav {
+  position: fixed;
   bottom: 20px;
-  margin: 0;
   left: 20px;
+  width: 100%;
+  height: auto;
+  display: inline-block;
 }
 
-.name a {
+a {
   transition: 0.1s;
-}
-
-.name a:hover {
-  filter: blur(1px);
 }
 
 .time {
@@ -145,59 +235,76 @@ ul,li {
 
 @media only screen and (max-width: 1250px) {
 
+  .App {
+    padding: 10px;
+  }
+
   img {
-    max-width: calc(50vw - 10px);
+    max-width: 100%;
     position: relative;
     width: 100%;
   }
 
-  .project {
-    width: calc(50vw - 30px);
+  .modalwrap {
+    width: 100vw;
     height: 100vh;
-    margin: 20px 0 0 20px;
+    margin-left: 0px;
     padding: 0;
     display: inline-block;
     vertical-align: top;
   }
 
-  .projectcap {
-    position: fixed;
-    bottom: 46px;
-    left: 20px;
-    padding: 20px 20px 0 0;
-    z-index: 1000;
-    margin-bottom: 0;
-    width: calc(50vw - 50px);
-    height: auto;
-    background-color: none;
+
+  .modalslider {
+    width: calc(100vw - 40px);
+    height: calc(100vh - 40px);
+    margin: 10px;
+    padding: 10px 10px 0 10px;
+  }
+
+  .modalnav {
+    position: absolute;
+    bottom: 0px;
+    margin: 0;
+    padding: 5px 20px 15px 0;
+    width: calc(100vw - 60px);
+    height: 56px;
+    background-color: #fff;
   }
 
   .personal {
-    width: calc(50vw - 30px);
-    height: 100vh;
-    margin: 20px 0 0 20px;
-    padding: 0;
-    display: inline-block;
-    vertical-align: top;
+    height: calc(100vh - 73px);
+    width: calc(100% - 20px);
   }
 
   .personalcap {
     position: fixed;
-    bottom: 46px;
-    padding: 20px 20px 0 0;
-    z-index: 1000;
-    margin-bottom: 0;
-    width: calc(50vw - 50px);
-    height: auto;
-    background-color: none;
+    padding: 5px 0 53px 0;
   }
 
   .nav {
-    height: 81px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    z-index: 500;
+  }
+
+  .nav div {
+    position: auto;
+    display: inline-block;
+    margin-right: 10px;
   }
 }
 
 @media only screen and (max-width: 750px) {
+
+  .App {
+    padding: 0;
+  }
+
   body {
       overflow: auto;
       font-size: 12px;
@@ -211,66 +318,44 @@ ul,li {
     display: none;
   }
 
-  .project {
-    width: calc(100% - 20px);
-    height: auto;
-    margin: 31px 10px 10px 10px;
-    display: block;
-  }
-
-  .projectcap {
-    position: relative;
-    display: block;
-    padding: 0;
-    margin-top: 5px;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 0;
-  }
-
   .personal {
     width: calc(100% - 20px);
     height: auto;
-    margin: 10px;
+    margin: 0;
     display: block;
+    padding-top: 0;
   }
 
   .personalcap {
     position: relative;
     display: block;
     padding: 0;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    bottom: 0;
-    left: 0;
+    margin-top: 0px;
+    margin-bottom: 5px;
     width: 100%;
     height: auto;
-    z-index: 0;
-  }
-
-  .number {
-    font-size: 10px;
+    z-index: 50;
   }
 
   .nav {
-    height: 31px;
+    position: relative;
     top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1000;
+    height: auto;
+    padding: 10px 10px 15px 10px;
   }
 
   .name {
-    position: fixed;
-    top: 10px;
-    margin: 0;
-    left: 10px;
+    position: relative;
   }
 
-  .time {
-    display: inline-block;
-    position: absolute;
-    top: 10px;
-    margin: 0;
-    right: 10px;
+  .info {
+    position: absolute;  
+  }
+
+  .topborder {
+    display: none;
   }
 }

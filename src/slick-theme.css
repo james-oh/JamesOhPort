@@ -15,17 +15,13 @@
     margin-top: 0;
     height: 100%;
     width: 50%;
-
     display: block;
     padding: 0;
-
-    cursor: pointer;
-
     color: transparent;
     border: none;
     outline: none;
     background: transparent;
-    z-index: 999;
+    z-index: 2;
 }
 
 .slick-prev
