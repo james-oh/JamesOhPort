@@ -12,15 +12,14 @@ setConfiguration({
   gutterWidth: [10, 20, 20, 20]
 });
 
-
-
 class Personal extends Component {
   state = {
     active: 1,
     personal: [],
     images: [],
     current: -1,
-    childVisible: false
+    childVisible: false,
+    hide: true
   };
 
   componentDidMount() {
@@ -30,7 +29,8 @@ class Personal extends Component {
       .then(response => {
         this.setState({
           personal: response,
-          images: this.getImageNames(response)
+          images: this.getImageNames(response),
+          hide: false
         })
       })
   }
@@ -49,9 +49,25 @@ class Personal extends Component {
       )
     })
 
+    const renderPersonalCat = () => {
+      const { personal, active } = this.state;
+      const info  = personal[active - 1];
+
+      if (info && info.acf && info.acf.info ) {
+        const title = info.acf.info
+         if (info.acf.url) {
+           return <a href={info.acf.url} target="_blank">{info.acf.info}</a>
+         } else {
+           return title;
+         }
+      }
+    }
+
     let personalcap = <span>{this.state.personal[this.state.active - 1] && this.state.personal[this.state.active - 1].title.rendered}</span>
 
     let personalcat = <span>{this.state.personal[this.state.active - 1] && this.state.personal[this.state.active - 1].acf.info}</span>
+
+    let personaltitle = <span>{this.state.personal[this.state.active - 1] && this.state.personal[this.state.active - 1].content.rendered}</span>
 
     let personaltotal = personal.length;
 
@@ -60,101 +76,41 @@ class Personal extends Component {
       this.setState({
         active: (next + 1),
       }),
-      afterChange: (index) => {
-        if (this.slidermodal) {
-          this.slidermodal.slickGoTo(index)
-        }
-      },
       dots: false,
       infinite: true,
-      speed: 0,
+      speed: 100,
       slidesToShow: 1,
       slidesToScroll: 1,
       adaptiveHeight: true,
       draggable: false
     };
 
-    const settingsmodal = {
-      beforeChange: (current, next) =>
-      this.setState({
-        active: (next + 1),
-      }),
-      afterChange: (index) => {
-        this.slider.slickGoTo(index)
-      },
-      initialSlide: this.state.active - 1,
-      dots: false,
-      infinite: true,
-      speed: 0,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      adaptiveHeight: true,
-      draggable: false
-    };
     const { images, current  } = this.state;
-    return (
-      <div className='personal'>
-        <Slider {...settings} ref={slider => (this.slider = slider)}>
-          {personal}
-        </Slider>
-        <div className='personalcap'>
-          <p><span className='number'>{personalcat}</span></p>
-          <p><span className='number'>({this.state.active}/{personaltotal})</span>
-          <a onClick={() => this.enter()}>{personalcap}</a><a onClick={() => this.enter()} className='zoom'>+</a></p>
+
+    if(this.state.hide) {
+      return null
+    } else {
+      return (
+        <ReactCSSTransitionGroup
+          transitionName="load"
+          transitionAppear={true}
+          transitionAppearTimeout={1500}
+          transitionEnterTimeout={2500}
+          // mountOnEnter={true}
+          transitionLeave={false}>
+        <div className='personal'>
+          <Slider {...settings} ref={slider => (this.slider = slider)}>
+            {personal}
+          </Slider>
+          <div className='personalcap'>
+            <p>{personalcap}</p>
+            <p><span className='number'>({this.state.active}/{personaltotal})</span>
+            <span className='title'>{renderPersonalCat()}</span></p>
+          </div>
         </div>
-        {
-          this.state.childVisible
-          ? <div className='modal'>
-            <ReactCSSTransitionGroup
-            transitionName="fade"
-            transitionAppear={true}
-            transitionAppearTimeout={100}
-            transitionEnter={false}
-            transitionLeave={false}>
-              <Container className='modalwrap'>
-                <Row  ug>
-                  <Col xs ={12} sm={0} md={1}>
-                    <div className='back'>
-                      <a onClick={() => this.setState({childVisible: false})}>BACK</a>
-                    </div>
-                  </Col>
-                  <Col xs ={12} sm={12} md={10}>
-                    <div className='modalslider'>
-                    <ReactCSSTransitionGroup
-                    transitionName="fade"
-                    transitionAppear={true}
-                    transitionAppearTimeout={100}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                      <Slider {...settingsmodal} ref={slider => (this.slidermodal = slider)}>
-                        {personal}
-                      </Slider>
-                      </ReactCSSTransitionGroup>
-                      <div className='modalnav'>
-                        <p><span className='number'>{personalcat}</span></p>
-                        <p><span className='number'>({this.state.active}/{personaltotal})
-                        </span><a>{personalcap}</a></p>
-                      </div>
-                      <div className='topborder'>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col xs ={12} sm={0} md={1}>
-                  </Col>
-                </Row>
-              </Container>
-              </ReactCSSTransitionGroup>
-            </div>
-          : null
-        }
-      </div>
-
-    );
-  }
-
-  enter() {
-    this.setState({ childVisible: true });
-    console.log('b');
+        </ReactCSSTransitionGroup>
+      );
+    }
   }
 }
 

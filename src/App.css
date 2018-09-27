@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'lanakimregular';
-    src: url('fonts/lanakim-regularlanakim-regular-webfont.woff2') format('woff2'), url('fonts/lanakim-regularlanakim-regular-webfont.woff') format('woff');
+    src: url('fonts/lanakim-Regular.woff2') format('woff2'), url('fonts/lanakim-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -11,30 +11,30 @@
 }
 
 ::-moz-selection { /* Code for Firefox */
-    color: #0FC6FF;
+    color: #c6ff00;
     background: rgb(255, 255, 255, 0);
 }
 
 ::selection {
-    color: #0FC6FF;
+    color: #c6ff00;
     background: rgb(255, 255, 255, 0);
 }
 
 body {
   margin: 0;
   font-size: 12px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   line-height: 14px;
   text-transform: uppercase;
   font-family: 'lanakimregular';
-  background-color: #fff;
+  background-color: #f8f8f8;
   overflow: hidden;
 }
 
 p {
   font-family: 'lanakimregular';
   margin: 0;
-  color: #9e9e9e;
+  color: #000;
   cursor: default;
 }
 
@@ -42,31 +42,22 @@ a {
   z-index: 50;
   cursor: pointer;
   color: #000;
+  transition: 0.05s ease-in;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c6ff00;
 }
 
 .number {
-  color: #9e9e9e;
+  color: #000;
   font-size: 12px;
   margin-right: 5px;
 }
 
-.zoom {
-  font-size: 24px;
-  line-height: 12px;
-  position: absolute;
-  width: 12px;
-  text-align: right;
-  box-shadow: 0px 0px 12px 10px #fff;
-  right: 0;
-  background-color: #fff;
-}
-
-.exit {
-  font-size: 8px;
-  margin-left: 100px;
-  width: 12px;
-  /* box-shadow: 0px 0px 12px 10px #fff; */
-  background-color: #fff;
+.title {
+  color: #000;
 }
 
 img {
@@ -80,40 +71,49 @@ ul,li {
     padding-left: 0;
 }
 
-.fade-appear {
-  opacity: 0;
-}
-
-.fade-appear.fade-appear-active {
-  opacity: 1;
-  transition: opacity 100ms ease-in;
-}
-
 .load-appear {
   opacity: 0;
 }
 
 .load-appear.load-appear-active {
   opacity: 1;
-  transition: opacity 5000ms ease-in;
+  transition: opacity 1000ms ease-in;
 }
 
-.fade-enter {
+.f1-appear {
   opacity: 0;
 }
 
-.fade-enter-active {
+.f1-appear-active {
   opacity: 1;
-  transition: opacity 1000ms;
+  transition: opacity 500ms ease-in;
 }
 
-.fade-leave {
-  opacity: 1;
-}
-
-.fade-leave-active {
+.f2-appear {
   opacity: 0;
-  transition: opacity 1000ms;
+}
+
+.f2-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.f3-appear {
+  opacity: 0;
+}
+
+.f3-appear-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+
+.f4-appear {
+  opacity: 0;
+}
+
+.f4-appear-active {
+  opacity: 1;
+  transition: opacity 2000ms ease-in;
 }
 
 .modal {
@@ -123,7 +123,7 @@ ul,li {
   bottom: 0;
   right: 0;
   z-index: 500;
-  background-color: #fff;
+  background-color: #f8f8f8;
 overflow: scroll;
 }
 
@@ -137,50 +137,13 @@ overflow: scroll;
   overflow: scroll;
 }
 
-.modalslider {
-  width: calc(100% - 20px);
-  height: 100%;
-  margin: 0;
-  padding: 10px 10px 0 10px;
-  display: inline-block;
-  vertical-align: top;
-  z-index: 10;
-  overflow: scroll;
-}
-
-.modalslider img {
-  max-height: auto;
-  width: 100%;
-  display: block;
-  overflow: scroll;
-}
-
-.modalnav {
-  width: 100%;
-  position: fixed;
-  bottom: 0px;
-  padding-bottom: 20px;
-  z-index: 900;
-  background-color: #fff;
-  padding-top: 10px;
-}
-
 .back {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 100%;
+  width: auto;
   height: auto;
-  z-index: 1000;
-}
-
-.topborder {
-  background-color: #fff;
-  position: fixed;
-  height: 20px;
-  width: 100vw;
-  top: 0;
-  z-index: 1000;
+  z-index: 600;
 }
 
 .App {
@@ -213,7 +176,7 @@ overflow: scroll;
   z-index: 4;
   padding-bottom: 10px;
   padding-top: 5px;
-  background-color: #fff;
+  background-color: #f8f8f8;
 }
 
 .nav {
@@ -225,12 +188,36 @@ overflow: scroll;
   display: inline-block;
 }
 
-a {
-  transition: 0.1s;
-}
-
 .time {
   display: none;
+}
+
+.infoText{
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: none;
+  color: #000;
+}
+
+.infoNav {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 20px;
+  z-index: 900;
+  background-color: #f8f8f8;
+  padding-top: 5px;
+  margin-left: 10px;
+}
+
+.infoWrap {
+  width: calc(100% - 20px);
+  height: calc(100vh - 40px);
+  margin: 0;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 1250px) {
@@ -249,27 +236,9 @@ a {
     width: 100vw;
     height: 100vh;
     margin-left: 0px;
-    padding: 0;
+    padding: 10px;
     display: inline-block;
     vertical-align: top;
-  }
-
-
-  .modalslider {
-    width: calc(100vw - 40px);
-    height: calc(100vh - 40px);
-    margin: 10px;
-    padding: 10px 10px 0 10px;
-  }
-
-  .modalnav {
-    position: absolute;
-    bottom: 0px;
-    margin: 0;
-    padding: 5px 20px 15px 0;
-    width: calc(100vw - 60px);
-    height: 56px;
-    background-color: #fff;
   }
 
   .personal {
@@ -277,10 +246,11 @@ a {
     width: calc(100% - 20px);
   }
 
-  .personalcap {
+  /* .personalcap {
     position: fixed;
+    width: calc(50vw - 40px);
     padding: 5px 0 53px 0;
-  }
+  } */
 
   .nav {
     position: fixed;
@@ -296,6 +266,21 @@ a {
     position: auto;
     display: inline-block;
     margin-right: 10px;
+  }
+
+  .infoWrap {
+    height: calc(100vh - 73px);
+    width: calc(100% - 20px);
+  }
+
+  .infoNav {
+    width: calc(100% - 20px);
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+    padding-bottom: 53px;
+    padding-top: 5px;
+    background-color: #f8f8f8;
   }
 }
 
@@ -314,8 +299,10 @@ a {
     max-width: 100%;
   }
 
-  .zoom {
-    display: none;
+  .modalwrap {
+    height: auto;
+    margin: 0px;
+    padding: 0px;
   }
 
   .personal {
@@ -339,20 +326,44 @@ a {
 
   .nav {
     position: relative;
+    font-size: 16px;
+    line-height: 20px;
     top: 0;
     left: 0;
-    background-color: #fff;
-    z-index: 1000;
+    background-color: #f8f8f8;
+    z-index: 10;
     height: auto;
-    padding: 10px 10px 15px 10px;
+    padding: 10px 10px 5px 10px;
+  }
+
+  .infoNav {
+    position: fixed;
+    bottom: 20px;
+    padding-bottom: 30px;
+  }
+
+  .back {
+    width: 100%;
+    height: auto;
+    bottom: 5px;
+    left: 0;
+    padding: 10px;
+    background-color: #f8f8f8;
   }
 
   .name {
     position: relative;
   }
 
-  .info {
-    position: absolute;  
+  .name p {
+    color: #9e9e9e;
+  }
+
+  .infoWrap {
+    padding-top: 9px;
+    width: calc(100% - 20px);
+    height: auto;
+    display: block;
   }
 
   .topborder {

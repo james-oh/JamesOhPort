@@ -29,35 +29,20 @@ class App extends Component {
     return (
 
       <Container className='App'>
-      <ReactCSSTransitionGroup
-      transitionName="load"
-      transitionAppear={true}
-      transitionAppearTimeout={5000}>
         <Row >
           <Col xs ={12} sm={0} md={1}>
             <Hidden md> </Hidden>
             <Hidden lg><Nav /></Hidden>
           </Col>
-            <Col xs ={12} sm={6} md={5}>
-            <ReactCSSTransitionGroup
-            transitionName="load"
-            transitionAppear={true}
-            transitionAppearTimeout={5000}>
+            <Col xs ={12} sm={7} md={6}>
               <Personal type={'projects'}/>
-            </ReactCSSTransitionGroup>
             </Col>
-            <Col xs ={12} sm={6} md={5}>
-              <ReactCSSTransitionGroup
-            transitionName="load"
-            transitionAppear={true}
-            transitionAppearTimeout={5000}>
+            <Col xs ={12} sm={5} md={4}>
               <Personal type={'personal'}/>
-              </ReactCSSTransitionGroup>
             </Col>
           <Col xs ={12} sm={0} md={1}>
           </Col>
         </Row>
-        </ReactCSSTransitionGroup>
       </Container>
 
     )
