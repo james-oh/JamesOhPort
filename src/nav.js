@@ -46,7 +46,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum convallis enim venenatis tempus. Nunc elementum semper mollis. Nunc eu dolor non libero blandit convallis. Sed aliquam lorem ligula, porttitor tincidunt dolor hendrerit vel. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                          
                           <br /><br />
                           </p>
                           </ReactCSSTransitionGroup>
@@ -57,7 +57,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          Sed in urna nec elit dictum volutpat. Nullam velit ante, lobortis vitae urna vitae, bibendum eleifend lectus. Vestibulum eget tincidunt sem, vel placerat felis. Suspendisse aliquam justo in sem finibus lobortis.
+
                           </p>
                           </ReactCSSTransitionGroup>
                           </div>
@@ -69,8 +69,9 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <div className='infoNav'>
+                            <a>hello@jamesoh.info</a>
                             <p><span className='number'>+ 514 578 5249</span></p>
-                            <a>contact@jamesoh.info</a>
+
                           </div>
                           </ReactCSSTransitionGroup>
                         </Col>
