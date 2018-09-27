@@ -23,7 +23,7 @@ class Personal extends Component {
   };
 
   componentDidMount() {
-    let personalURL = 'http://jamesoh.info/wp-json/wp/v2/' + this.props.type
+    let personalURL = 'http://localhost:8888/wp-json/wp/v2/' + this.props.type
     fetch(personalURL)
       .then(response => response.json())
       .then(response => {
@@ -79,7 +79,7 @@ class Personal extends Component {
       }),
       dots: false,
       infinite: true,
-      speed: 100,
+      speed: 0,
       slidesToShow: 1,
       slidesToScroll: 1,
       adaptiveHeight: true,
