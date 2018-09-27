@@ -23,7 +23,7 @@ class Personal extends Component {
   };
 
   componentDidMount() {
-    let personalURL = 'http://localhost:8888/wp-json/wp/v2/' + this.props.type
+    let personalURL = 'http://jamesoh.info/wp-json/wp/v2/' + this.props.type
     fetch(personalURL)
       .then(response => response.json())
       .then(response => {
@@ -36,6 +36,7 @@ class Personal extends Component {
   }
 
   getImageNames(payload) {
+    console.log(payload);
     return payload.map(personal => personal.better_featured_image.source_url)
   }
 

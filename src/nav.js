@@ -70,7 +70,7 @@ class Nav extends Component {
                           transitionLeave={false}>
                           <div className='infoNav'>
                             <p><span className='number'>+ 514 578 5249</span></p>
-                            <a>hello @ jamesoh.info</a>
+                            <a>contact @ jamesoh.info</a>
                           </div>
                           </ReactCSSTransitionGroup>
                         </Col>
