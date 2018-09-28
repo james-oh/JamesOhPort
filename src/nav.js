@@ -35,7 +35,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          JAMES OH is a Graphic Designer operating in the arts and culture sectors.
+                          JAMES OH is a Graphic Designer operating in the sectors of arts and culture.
                           <br /><br />
                           </p>
                           </ReactCSSTransitionGroup>
@@ -46,7 +46,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          
+                          Currently in Montreal
                           <br /><br />
                           </p>
                           </ReactCSSTransitionGroup>
@@ -57,7 +57,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-
+                          While we can report significant progress in proper DNS resolution, a few services still remain affected, The engineering team is actively working on the remaining issues I will send another update at 11:30 pm.
                           </p>
                           </ReactCSSTransitionGroup>
                           </div>
@@ -69,7 +69,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <div className='infoNav'>
-                            <a>hello@jamesoh.info</a>
+                            <p>hello@jamesoh.info</p>
                             <p><span className='number'>+ 514 578 5249</span></p>
 
                           </div>
