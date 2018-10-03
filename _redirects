@@ -1,0 +1,3 @@
+# /_redirects
+
+/wp-json/*  http://wp.jamesoh.info/wp-json/:splat
