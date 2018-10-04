@@ -35,7 +35,8 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          JAMES OH is a Graphic Designer operating in the sectors of arts and culture.
+                          JAMES OH IS A MULTIDISCIPLINARY DESIGNER WITH A FOCUSED TRAJECTORY IN FASHION AND CULTURE. 
+                          PREVIOUSLY AT SSENSE.
                           <br /><br />
                           </p>
                           </ReactCSSTransitionGroup>
@@ -46,7 +47,8 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          Currently in Montreal
+                          BORN IN SEOUL, SOUTH KOREA
+                          BA GRAPHIC DESIGN, AUCKLAND UNIVERSITY OF TECHNOLOGY, 2014
                           <br /><br />
                           </p>
                           </ReactCSSTransitionGroup>
@@ -57,7 +59,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          While we can report significant progress in proper DNS resolution, a few services still remain affected, The engineering team is actively working on the remaining issues I will send another update at 11:30 pm.
+                          THIS WEBSITE SERVES TO CONNECT INTENTIONAL AS WELL AS UNINTENTIONAL RELATIONSHIPS, AMONGST THE SPECTRUM OF MY CREATIVE WORKS.
                           </p>
                           </ReactCSSTransitionGroup>
                           </div>
