@@ -59,7 +59,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          THIS WEBSITE SERVES TO CONNECT INTENTIONAL AS WELL AS UNINTENTIONAL RELATIONSHIPS, AMONGST THE SPECTRUM OF MY CREATIVE WORKS.
+                          THIS WEBSITE SERVES TO CONNECT INTENTIONAL, AS WELL AS UNINTENTIONAL RELATIONSHIPS AMONGST THE SPECTRUM OF MY CREATIVE WORKS.
                           </p>
                           </ReactCSSTransitionGroup>
                           </div>
