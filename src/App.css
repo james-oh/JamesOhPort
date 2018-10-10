@@ -195,6 +195,7 @@ overflow: scroll;
 .infoText{
   font-size: 12px;
   line-height: 14px;
+  letter-spacing: 0.5px;
   text-transform: none;
   color: #000;
 }
