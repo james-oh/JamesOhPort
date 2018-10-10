@@ -46,7 +46,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          BORN IN SEOUL, SOUTH KOREA<br>
+                          BORN IN SEOUL, SOUTH KOREA<br />
                           BA GRAPHIC DESIGN, AUCKLAND UNIVERSITY OF TECHNOLOGY, 2014
                           <br /><br />
                           </p>
