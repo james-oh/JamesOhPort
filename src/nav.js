@@ -35,8 +35,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          JAMES OH IS A MULTIDISCIPLINARY DESIGNER WITH A FOCUSED TRAJECTORY IN FASHION AND CULTURE. 
-                          PREVIOUSLY AT SSENSE.
+                          JAMES OH IS A MULTIDISCIPLINARY DESIGNER WITH A FOCUSED TRAJECTORY IN FASHION AND CULTURE.
                           <br /><br />
                           </p>
                           </ReactCSSTransitionGroup>
@@ -47,7 +46,7 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <p className="infoText">
-                          BORN IN SEOUL, SOUTH KOREA
+                          BORN IN SEOUL, SOUTH KOREA<br>
                           BA GRAPHIC DESIGN, AUCKLAND UNIVERSITY OF TECHNOLOGY, 2014
                           <br /><br />
                           </p>
