@@ -123,7 +123,7 @@ ul,li {
   bottom: 0;
   right: 0;
   z-index: 500;
-  background-color: #f8f8f8;
+  background-color: #fff;
 overflow: scroll;
 }
 
@@ -176,7 +176,7 @@ overflow: scroll;
   z-index: 4;
   padding-bottom: 10px;
   padding-top: 5px;
-  background-color: #f8f8f8;
+  background-color: #fff;
 }
 
 .nav {
@@ -206,7 +206,7 @@ overflow: scroll;
   bottom: 0px;
   padding-bottom: 20px;
   z-index: 900;
-  background-color: #f8f8f8;
+  background-color: #fff;
   padding-top: 5px;
   margin-left: 10px;
 }
@@ -281,7 +281,7 @@ overflow: scroll;
     z-index: 4;
     padding-bottom: 53px;
     padding-top: 5px;
-    background-color: #f8f8f8;
+    background-color: #fff;
   }
 }
 
@@ -331,7 +331,7 @@ overflow: scroll;
     line-height: 14px;
     top: 0;
     left: 0;
-    background-color: #f8f8f8;
+    background-color: #fff;
     z-index: 10;
     height: auto;
     padding: 10px 10px 5px 10px;
@@ -349,7 +349,7 @@ overflow: scroll;
     bottom: 5px;
     left: 0;
     padding: 10px;
-    background-color: #f8f8f8;
+    background-color: #fff;
   }
 
   .name {
