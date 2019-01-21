@@ -70,8 +70,8 @@ class Nav extends Component {
                           transitionEnter={false}
                           transitionLeave={false}>
                           <div className='infoNav'>
-                            <p>hello@jamesoh.info</p>
-                            <p><span className='number'>+ 514 578 5249</span></p>
+                            <p>khjamesoh@gmail.com</p>
+                            <p><span className='number'>+ 44 7508 742 485</span></p>
 
                           </div>
                           </ReactCSSTransitionGroup>
